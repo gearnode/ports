@@ -1,0 +1,42 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+name                prototool
+version             1.8.0
+categories          devel
+platforms           darwin
+supported_archs     x86_64
+license             MIT
+
+maintainers         @gearnode
+
+checksums           rmd160 e556c2849dcd4168202a9f8099bd5919fcb61314 \
+                    sha256 569cd938a20e6d6f8725deb1d1cb2deab45eb6a05036aec1a92da9759079016d
+
+homepage            https://github.com/uber/prototool
+
+description         Your Swiss Army Knife for Protocol Buffers
+long_description    Prototool accomplishes this by downloading and calling protoc on the fly \
+                    for you, handing error messages from protoc and your plugins, and using \
+                    the generated FileDescriptorSets for internal functionality, as well as \
+                    wrapping a few great external libraries already in the Protobuf ecosystem. \
+                    Compiling, linting and formatting commands run in around 3/100ths of second \
+                    for a single Protobuf file, or under a second for a larger number (500+) \
+                    of Protobuf files.
+
+master_sites        https://github.com/uber/prototool/releases/download/v${version}/
+distname            prototool-Darwin-${supported_archs}
+dist_subdir         ${name}/${version}
+
+use_tar             yes
+extract.suffix      .tar.gz
+
+use_configure       no
+
+build {
+}
+
+destroot {
+    xinstall ${workpath}/${name}/bin/prototool ${destroot}${prefix}/bin/prototool
+}

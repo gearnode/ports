@@ -14,6 +14,8 @@ maintainers         @gearnode
 checksums           rmd160 479a66bb0634e2d15b92321fcf14454224403128 \
                     sha256 b800d949ed1184b276bf1d5471211dd60a204e5199db0725efb59a4a09166221
 
+homepage            https://github.com/fullstorydev/grpcurl
+
 description         Like cURL, but for gRPC: Command-line tool for interacting with gRPC servers
 long_description    The main purpose for this tool is to invoke RPC methods on a gRPC server from \
                     the command-line. gRPC servers use a binary encoding on the wire (protocol buffers, \
